@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: perf-test
+spec:
+  template:
+    spec:
+      containers:
+        - name: perf-test
+          image: registry.au-syd.bluemix.net/prawit-poc/task:0.0.1
+      restartPolicy: Never
+  backoffLimit: 4
